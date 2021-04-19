@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
 
-from users.models import User, Adapter
-from users.serializers import UserSerializer, AdapterSerializer
+from users.models import User, Adapter, License
+from users.serializers import UserSerializer, AdapterSerializer, LicenseSerializer
 
 
 class AdapterViewSet(viewsets.ModelViewSet):
@@ -24,3 +24,9 @@ class UserViewSet(viewsets.ModelViewSet):
     #     # except Adapter.DoesNotExist:
     #     #     raise ValidationError('Adapter with given serial nubmer and code was not found')
     #     return super(UserViewSet, self).create(request, *args, **kwargs)
+
+
+class LicenseViewSet(viewsets.ModelViewSet):
+    queryset = License.objects.all()
+    serializer_class = LicenseSerializer
+        

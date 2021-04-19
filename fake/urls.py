@@ -22,6 +22,7 @@ from users import views
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register('adapters', views.AdapterViewSet)
+router.register('licenses', views.LicenseViewSet)
 
 
 urlpatterns = [

@@ -29,7 +29,7 @@ class License(models.Model):
     license_type = models.CharField(max_length=100)
     tariff = models.CharField(max_length=100)
 
-    calculated_price = models.FloatField(blank=True, null=True)
+    price = models.FloatField(blank=True, null=True)
     is_active = models.BooleanField(default=False)
     start_date = models.DateField(blank=True, null=True)
     finish_date = models.DateField(blank=True, null=True)

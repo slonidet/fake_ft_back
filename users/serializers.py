@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from users.models import User, Adapter
+from users.models import User, Adapter, License
 
 
 class AdapterSerializer(serializers.ModelSerializer):
@@ -30,4 +30,10 @@ class UserSerializer(serializers.ModelSerializer):
             }
             raise serializers.ValidationError(message)
         return attrs
+
+
+class LicenseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = License
+        fields = '__all__'
 
